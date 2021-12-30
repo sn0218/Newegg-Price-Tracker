@@ -58,8 +58,6 @@ The application displays the dynamic current price and status of the tracked pro
 The application calculates the price difference between current price and target price to notify the user whether the current price drops to the target price.
 User can change the target price of product and remove the price watch of product on this page.
 
-### Video Demonstration on youtube
-https://youtu.be/MBgyN2xhngA
 
 ### Technology
 - Web Framework: Flask

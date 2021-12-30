@@ -1,0 +1,261 @@
+.carousel-item {
+    height: 32rem;
+    background: rgb(0, 0, 0);
+    color:white;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* breakpoint for x-large screen*/
+@media (min-width: 1199.98px){
+  .carousel-item {
+    height: 32rem;
+    background: rgb(0, 0, 0);
+    color:white;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+}
+
+#mainNavbar {
+    padding-left: 30px;
+    padding-top: 25px;
+    background-color: rgba(20, 20, 20, 0.95);
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: large;
+}
+.navbar{
+    font-family: 'Source Serif Pro', serif;
+}
+
+.navbar li{
+    margin: 5px 5px;
+}
+
+@media (max-width: 991.98px){
+    .navbar .divider{
+        background-color:rgb(150, 150, 150);
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+    }
+    .navbar-brand{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5px;
+      }
+}
+
+.navbar-dark .navbar-brand {
+    font-family: 'Source Serif Pro', serif;
+    color: rgb(150, 150, 150) !important;
+
+}
+
+.navbar-nav .nav-link {
+    font-size: small;
+    font-family: 'Source Serif Pro', serif;
+    color: rgb(150, 150, 150)  !important;
+}
+
+/* link hover effect */
+.nav-link::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: grey;
+    transition: transform .3s ease-in-out
+}
+
+.nav-link:hover::after{
+    width: 100%;
+    transition: width .3s
+}
+
+.overlay-image{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center top;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.85;
+}
+
+.font-weight-light {
+    font-family: 'Source Serif Pro', serif
+}
+
+footer {
+  text-align: center;
+  background-color: #F9F9F9;
+  margin-top: 50px; /* space between content and footer */
+}
+
+.footertext {
+    color: rgb(150, 150, 150) !important;
+    font-family: 'Source Serif Pro', serif;
+    font-size: small;
+}
+
+.content{
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+    position: relative;
+}
+
+.featurette-divider{
+    margin: 2rem 0;
+}
+/* Style form group */
+.form-group{
+    margin: 20px 0px;
+}
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 20px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 10px 5px;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+
+.fa-shopping-cart {
+  color: #343435;
+}
+

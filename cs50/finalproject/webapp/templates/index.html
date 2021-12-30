@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+<style>
+    #carouseltext .container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100px;
+    }
+</style>
+
+<!-- Carouel slide -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('https://images.nvidia.com/aem-dam/Solutions/geforce/ampere/rtx-3090/geforce-rtx-3090-product-gallery-full-screen-3840-3.jpg');">
+        <div id="carouseltext">
+          <div class="container .d-block">
+            <h1>Price Tracker</h1>
+            <p>The price tracker let you track real-time product price in Newegg.</p>
+            <a href="/track" class="btn btn-lg btn-primary" style="font-size: 15px;">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-item" style="background-image: url('https://zonaactual.es/wp-content/uploads/2021/02/011320-Nvidia-GeForce-RTX-3060-1620x800.jpg')"> 
+        <!-- https://cdn.appuals.com/wp-content/uploads/2019/09/NVIDIA.jpg -->
+        <div id="carouseltext">
+          <div class="container .d-block">
+            <h1>Price Tracker</h1>
+            <p>The price tracker let you track real-time product price in Newegg.</p>
+            <a href="#" class="btn btn-lg btn-primary" style="font-size: 15px;">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('https://img.advice.co.th/images_nas/advice_activity/201912253356695332.jpg')">
+        <div id="carouseltext">
+          <div class="container .d-block">
+            <h1>Price Tracker</h1>
+            <p>The price tracker let you track real-time product price in Newegg.</p>
+            <a href="#" class="btn btn-lg btn-primary" style="font-size: 15px;">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product link input -->
+  <div class="container">
+      <div class="row py-5">
+        <div class="col-lg-10 offset-lg-1">
+        <h3>Your Recently Tracked Products</h3>
+        <p><small>These are the last 3 price watches you've created. We'll let you know when these prices reach your desired price target. 
+          <a href="/tracker">See your price watches.</a></small>
+        </p>
+
+          <table class="table table-borderless" style="margin-top: 25px;">
+              <thead class="table-dark">
+                  <tr>
+                      <th style="width: 60%">Name</th>
+                      <th style="width: 20%">Target Price</th>
+                      <th style="width: 20%">Current Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                      {% for product in products %}
+                      <tr>  
+                          <td id="productname{{product.id}}">{{ product.productname }}</td>
+                          <td id="targetrpice{{product.id}}">{{ '${:,.2f}'.format(product.targetprice) }}</td>
+                          {% if not product.currentprice == None %}
+                          <td id="currentprice{{product.id}}">{{ '${:,.2f}'.format(product.currentprice) }}</td>
+                          {% else %}
+                          <td id="currentprice{{product.id}}">Not Available</td>
+                          {% endif %}
+                      </tr>
+                      {% endfor %}
+      
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+
+
+    
+
+{% endblock %}

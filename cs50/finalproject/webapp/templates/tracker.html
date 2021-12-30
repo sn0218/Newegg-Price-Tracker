@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block title %}Newegg Price Tracker{% endblock %}
+
+{% block main %}
+<!--　Load jQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script> 
+<script>
+    window.jQuery || document.write('<script src="/path/to/your/jquery"><\/script>');
+</script>
+
+<!-- Load updateValue.js ajax application -->
+<script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson }};
+</script>
+
+<script src="{{url_for('static', filename='updateValue.js')}}"></script>
+
+<div class="container" style="margin-top:30px">
+ <div class="row">
+  <div class="col-lg-12">
+    <h3><strong>Your Newegg Price Watches</strong></h3>
+    <small><p>The page displays the last <strong>20</strong> live price watches you've created.</p></small>
+    <small>Download to see all of your price watches.</small>
+    <a href="/download" class="btn btn-secondary btn-sm" style="margin: 5px 20px;">Click To Download</a>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <caption>The current price, price difference and status will be updated automatically every 2 minutes.</caption>
+        <thead>
+            <tr>
+                <th style="width: 40%">Name</th>
+                <th style="width: 10%">Price when tracked</th>
+                <th style="width: 10%">Desired Target Price</th>
+                <th style="width: 10%">Current Price</th>
+                <th style="width: 10%">Difference</th>
+                <th style="width: 10%">Status</th>
+                <th style="width: 10%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for product in products %}
+                <tr>
+
+                    <td id="productname{{product.id}}">{{ product.productname }}</td>
+                    <td id="trackedprice{{product.id}}">{{ '${:,.2f}'.format(product.trackedprice) }}</td>
+                    <td id="targetrpice{{product.id}}" style="color:blue;">{{ '${:,.2f}'.format(product.targetprice) }}
+
+                    <form action="/tracker" method="post">
+                     <input autocomplete="off" name="editid" type="hidden" value="{{ product.id }}">
+                     <div class="input-group input-group-sm">
+                      <input type="number" name="newtargetprice" placeholder="New Target Price" aria-label="Amount (to the nearest dollar)" autocomplete="off">
+                     </div>
+                     <input type="Submit" name="button" value="Edit Target Price" class="btn btn-secondary btn-sm" style="margin: 5px 0px;">
+                    </form>
+                    </td>
+                    
+                    {% if not product.currentprice == None %}
+                    <td id="currentprice{{product.id}}">{{ '${:,.2f}'.format(product.currentprice) }}</td>
+                    {% else %}
+                    <td id="currentprice{{product.id}}">Not Available</td>
+                    {% endif %}
+                    
+                    {% if not product.pricediff == None %}
+                        {% if product.pricediff > 0 %}
+                        <td id="pricediff{{product.id}}" style="color: red;">{{ '${:,.2f}'.format(product.pricediff) }}</td>
+                        {% else %}
+                        <td id="pricediff{{product.id}}" style="color: green;">{{ '${:,.2f}'.format(product.pricediff) }}</td>
+                        {% endif %}
+                    {% else %}
+                    <td id="pricediff{{product.id}}">Not Available</td>
+                    {% endif %}
+
+                    <td id="status{{product.id}}">{{ product.status }}</td>
+                    <td>
+                     <a href="{{ product.url }}" target="popup" class="btn btn-secondary btn-sm" style="margin: 5px 0px; width: 70px;">
+                      Buy
+                     </a>
+                     <form action="/tracker" method="post">
+                      <input autocomplete="off" name="removeid" type="hidden" value="{{ product.id }}">
+                      <input type="Submit" name="button" value="Remove" class="btn btn-secondary btn-sm" style="margin: 5px 0px; width: 70px;">
+                     </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+
+        </tbody>
+    </table>
+   </div>         
+  </div>
+ </div>
+</div>
+{% endblock %}

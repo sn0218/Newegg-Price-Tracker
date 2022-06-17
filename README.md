@@ -1,5 +1,8 @@
 # Newegg Price Tracker
 
+![Image](https://img.youtube.com/vi/MBgyN2xhngA/maxresdefault.jpg)
+
+
 ## Description
 This is the CS50x final project - Newegg Price Tracker
 
@@ -13,8 +16,6 @@ The price tracker gets the product's link from Newegg and then parse the informa
 
 
 > The application was built on flask with the intention to use different functions provided in flask.
-
-![Image](https://img.youtube.com/vi/MBgyN2xhngA/maxresdefault.jpg)
 
 
 ## Installation

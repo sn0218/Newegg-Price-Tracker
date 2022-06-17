@@ -16,6 +16,7 @@ The price tracker gets the product's link from Newegg and then parse the informa
 
 ![Image](https://img.youtube.com/vi/MBgyN2xhngA/maxresdefault.jpg)
 
+
 ## Installation
 1. Install and setup [Python](https://www.python.org/) on your computer
 https://www.python.org/
@@ -36,6 +37,7 @@ To intialize the project, run 'main.py' in 'cs50/finalproject/webapp'
 
 5. Test in local
 Access the web application: http://127.0.0.1:5000/
+
 
 ## How the Price Track work
 ### Registration
@@ -68,26 +70,32 @@ User can change the target price of product and remove the price watch of produc
 - CSS Library: Bootstrap 5
 - Web Technique: AJAX
 
+
 ### Routing
 Each route checks if the user is authenticated. It means if correct username and password are provided so the user can use the application.
+
 
 ### Session
 The webapp use `Flask-Login` to provide user session managemenet. It handles the common tasks of logging in, logging out, and remembering your users’ sessions over extended periods of time.
 
+
 ### Database
 Database stores all users and track records. The table like `Users` uses foreign keys to related to tracked products to demonstrate the one-to-many relationship in database.
+
 
 ### Web Scraping
 The webapp uses Beautiful Soup, a Python library for pulling data out of HTML and XML files.
 Beautiful Soup supports the HTML parser included in Python’s standard library, but it also supports a number of third-party Python parsers.
 The webapp use the lxml’s HTML parser with the advantages of fast speed.
 
+
 ### Documentation
 - https://flask-sqlalchemy.palletsprojects.com/en/2.x/
 - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 - https://flask-login.readthedocs.io/en/latest/
 
-### About CS50
+
+## About CS50
 CS50 is a openware course from Havard University and taught by David J. Malan
 
 Introduction to the intellectual enterprises of computer science and the art of programming. This course teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, and software engineering. Languages include C, Python, and SQL plus students’ choice of: HTML, CSS, and JavaScript (for web development).

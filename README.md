@@ -1,5 +1,6 @@
 # Newegg Price Tracker
-### Description
+
+## Description
 This is the CS50x final project - Newegg Price Tracker
 
 A web-based application to help users track the current price of different products in Newegg's website.
@@ -15,7 +16,7 @@ The price tracker gets the product's link from Newegg and then parse the informa
 
 ![Image](https://img.youtube.com/vi/MBgyN2xhngA/maxresdefault.jpg)
 
-### Installation
+## Installation
 1. Install and setup [Python](https://www.python.org/) on your computer
 https://www.python.org/
 
@@ -36,8 +37,8 @@ To intialize the project, run 'main.py' in 'cs50/finalproject/webapp'
 5. Test in local
 Access the web application: http://127.0.0.1:5000/
 
-### How the Price Track work
-#### Registration
+## How the Price Track work
+### Registration
 User can register account to use the price track application. During the registration, the user need to enter the following fields:
 - Username
 - Password
@@ -46,12 +47,12 @@ User can register account to use the price track application. During the registr
 After the registration, the user can access the Home Page of the application.
 The user can change the account password after logging in the website.
 
-#### Create Price Watch
+### Create Price Watch
 User can go to go the `Track` Price Tab to create their price watch.
 By copying the URL of product to the input field and entering the target price, click `Start Tracking` to track the product price.
 After creating the price watch, the user will be redirect to `Price Watches` to monitor the product's price
 
-#### Price Watches
+### Price Watches
 In the `Price Watches`, the user can view all of the created tracked product.
 The information of the tracked product is set to be updated every two minutes
 The application displays the dynamic current price and status of the tracked product.
@@ -67,16 +68,16 @@ User can change the target price of product and remove the price watch of produc
 - CSS Library: Bootstrap 5
 - Web Technique: AJAX
 
-#### Routing
+### Routing
 Each route checks if the user is authenticated. It means if correct username and password are provided so the user can use the application.
 
-#### Session
+### Session
 The webapp use `Flask-Login` to provide user session managemenet. It handles the common tasks of logging in, logging out, and remembering your users’ sessions over extended periods of time.
 
-#### Database
+### Database
 Database stores all users and track records. The table like `Users` uses foreign keys to related to tracked products to demonstrate the one-to-many relationship in database.
 
-#### Web Scraping
+### Web Scraping
 The webapp uses Beautiful Soup, a Python library for pulling data out of HTML and XML files.
 Beautiful Soup supports the HTML parser included in Python’s standard library, but it also supports a number of third-party Python parsers.
 The webapp use the lxml’s HTML parser with the advantages of fast speed.

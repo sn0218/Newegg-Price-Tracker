@@ -4,8 +4,6 @@
 
 
 ## Description
-This is the CS50x final project - Newegg Price Tracker
-
 A web-based application to help users track the current price of different products in Newegg's website.
 
 In this web application, flask web framework based on Python is used as it is necessary to use flask-login and flask-sqlalchemy with sqlite3 to manage the user status and user price watches.
@@ -97,9 +95,10 @@ The webapp use the lxml’s HTML parser with the advantages of fast speed.
 
 
 ## About CS50
-CS50 is a openware course from Havard University and taught by David J. Malan
+This project is the final project of CS50x.  
+CS50 is a openware course from Havard University and taught by David J. Malan.  
 
 Introduction to the intellectual enterprises of computer science and the art of programming. This course teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, and software engineering. Languages include C, Python, and SQL plus students’ choice of: HTML, CSS, and JavaScript (for web development).
 
-Thank you for CS50
+Thank you for CS50!
 
